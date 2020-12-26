@@ -40,7 +40,7 @@ KSPで、さきほどのInfiniteRouter.kspを読み込みます。
 CubaseのExpression Mapをダウンロードして、読み込みます。
 <img width="653" alt="Expmap" src="https://user-images.githubusercontent.com/46624978/103149034-3b028c80-47a9-11eb-8579-13ad985aa808.png">
 
-TouchOSC用のコントローラーも用意しました。タブレットをお持ちの方はぜひご活用ください。
+TouchOSC用のコントローラーも用意しました。タブレットをお持ちの方はぜひご活用ください。なお、ミックスのコントロールは、"Mixed Mic"を使用している場合のみ有効です。
 <img width="653" alt="TouchOSC" src="https://user-images.githubusercontent.com/46624978/103149051-608f9600-47a9-11eb-8ff7-0543f079e4a9.PNG">
 
 ## 注意点
