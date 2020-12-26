@@ -1,6 +1,6 @@
 # KSP Infinite Router
-KSP Multi Script for manual divisi of Infinite Brass/Woodwinds
-It allows you to assign each note to divisi parts you want to play in.
+KSP Multi Script for manual divisi of Infinite Brass/Woodwinds.<br>
+It allows you to assign each note to divisi parts you want to play in.<br>
 To use this script, you can use Infinite Brass/Woodwinds as an ensemble patch without recording each part.
 
 ## Usage
