@@ -1,9 +1,34 @@
 # KSP Infinite Router
 KSP Multi Script for manual divisi of Infinite Brass/Woodwinds.<br>
-It allows you to assign each note to divisi parts you want to play in.<br>
+It allows you to assign each note to divisi parts you want to play in by Expression Maps.<br>
 To use this script, you can use Infinite Brass/Woodwinds as an ensemble patch without recording each part.
 
 ## Usage
+Download InfiniteRouter.ksp and put it into KONTAKT script folder.
+- Windows
+    - C:\Users\(Username)\Documents\Native Instruments\Kontakt\presets\Multiscripts
+- Mac
+    - Macintosh HD\Users\(Username)\Documents\Native Instruments\Kontakt\presets\Multiscripts
+
+Launch KONTAKT for each instrument and load patches into Ch1-6.
+<img width="329" alt="Kontakt_1" src="https://user-images.githubusercontent.com/46624978/103148888-e874a080-47a7-11eb-88fd-253d375799cd.png">
+
+Load InfiniteRouter.ksp in KSP Multi.
+<img width="665" alt="Kontakt_2" src="https://user-images.githubusercontent.com/46624978/103148948-6cc72380-47a8-11eb-8ab4-ec5dbc127775.png">
+
+Set maximum parts you want to use.
+For example:
+- 6 Horns : 6 Parts
+- 3 Flutes : 3 Parts
+
+<img width="653" alt="InfiniteRouter" src="https://user-images.githubusercontent.com/46624978/103148959-9bdd9500-47a8-11eb-9a45-412bd852f5fa.png">
+
+Download Infinite Woodwinds(Div).expressionmap and load it into Cubase.
+<img width="653" alt="Expmap" src="https://user-images.githubusercontent.com/46624978/103149034-3b028c80-47a9-11eb-8579-13ad985aa808.png">
+
+Now you can assign each note to divisi parts you want to play in by note Attribute or Expression Maps.
+<img width="613" alt="Attribute" src="https://user-images.githubusercontent.com/46624978/103149561-f0374380-47ad-11eb-9b34-10018b0f5594.png">
+
 
 ## Note
 
