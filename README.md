@@ -31,9 +31,11 @@ InfiniteRouter.kspをダウンロードして、KONTAKTのスクリプトフォ�
 
 
 KSPで、さきほどのInfiniteRouter.kspを読み込みます。
+<img width="665" alt="Kontakt_2" src="https://user-images.githubusercontent.com/46624978/103148948-6cc72380-47a8-11eb-8ab4-ec5dbc127775.png">
 
 メニューで最大パートを指定します。
 例えば、Horn 1〜6であれば6 Partsを、Flute 1〜3であれば3 Partsです。
+<img width="653" alt="InfiniteRouter" src="https://user-images.githubusercontent.com/46624978/103148959-9bdd9500-47a8-11eb-9a45-412bd852f5fa.png">
 
 CubaseのExpression Mapをダウンロードして、読み込みます。
 
