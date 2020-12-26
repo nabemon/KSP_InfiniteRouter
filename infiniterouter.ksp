@@ -1,3 +1,4 @@
+    
 on init
 
 	set_script_title("Inifinite MIDI Router")
@@ -12,49 +13,58 @@ on init
 	declare ui_label $lb_usage (6,2)
     set_text($lb_usage, "Usage CH1-6: MIDI through for each parts | CH7: 1+2 | CH8: 2+3 or 3+4 | CH9: 5+6 CH10: 1+2+3 | CH11: 4+5+6 | CH12: Full Ens ")
 
-    declare ui_label $lb_debug(1,1)
+	declare $i
+	$i := 0
 		
-end on
-
-on ui_control($menu_partnum)
-    set_text($lb_debug, $menu_partnum)
 end on
 
 {note:$MIDI_CHANNEL is zero-based}
 
 on midi_in
-	ignore_midi
-	select($MIDI_CHANNEL)
-		case 0 to 5 {Each Instruments}
-			set_midi($MIDI_CHANNEL, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2)
-		case 6 {1+2}
-			set_midi(0, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2)
-			set_midi(1, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2)
-		case 7 
-            if ($menu_partnum = 3) {3 Parts: Send 2+3}
-	    		set_midi(1, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2)
-		    	set_midi(2, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2)
-            else {4/6 Parts: Send 3+4}
-	    		set_midi(2, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2)
-		    	set_midi(3, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2)  
-            end if
-        case 8
-			set_midi(4, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2)
-			set_midi(5, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2)
-        case 9
-			set_midi(0, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2)
-			set_midi(1, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2) 
-			set_midi(2, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2) 
-        case 10
-			set_midi(3, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2)
-			set_midi(4, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2) 
-			set_midi(5, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2) 
-        case 11
-			set_midi(0, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2)
-			set_midi(1, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2) 
-			set_midi(2, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2)
-			set_midi(3, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2)
-			set_midi(4, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2) 
-			set_midi(5, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2)          
-    end select
+	if ($MIDI_COMMAND = $MIDI_COMMAND_CC)
+		while ($i <= $menu_partnum)
+			set_midi($i,$MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2)
+			$i := $i +1
+		end while
+		$i := 0
+	else
+		select($MIDI_CHANNEL)
+			case 0 to 5 {Each Instruments}
+			case 6 {1+2}
+				ignore_midi
+				set_midi(0, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2)
+				set_midi(1, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2)
+			case 7 
+				ignore_midi
+				if ($menu_partnum = 3) {3 Parts: Send 2+3}
+					set_midi(1, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2)
+					set_midi(2, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2)
+				else {4/6 Parts: Send 3+4}
+					set_midi(2, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2)
+					set_midi(3, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2)  
+				end if
+			case 8 {5+6}
+				ignore_midi
+				set_midi(4, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2)
+				set_midi(5, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2)
+			case 9 {1+2+3}
+				ignore_midi
+				set_midi(0, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2)
+				set_midi(1, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2) 
+				set_midi(2, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2) 
+			case 10 {4+5+6}
+				ignore_midi
+				set_midi(3, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2)
+				set_midi(4, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2) 
+				set_midi(5, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2) 
+			case 11 {Full}
+				ignore_midi
+				set_midi(0, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2)
+				set_midi(1, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2) 
+				set_midi(2, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2)
+				set_midi(3, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2)
+				set_midi(4, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2) 
+				set_midi(5, $MIDI_COMMAND,$MIDI_BYTE_1,$MIDI_BYTE_2)          
+		end select
+	end if
 end on
