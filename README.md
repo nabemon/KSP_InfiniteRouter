@@ -17,10 +17,18 @@ Infinite Brass/Woodwindsで手動ディヴィジを行うためのマルチス�
 Infinite Brass/Woodwindsを、パートごとに入力しなくても、通常のアンサンブル音源に近い感覚で扱えるようになります。
 
 ## 使い方
-infiniterouter.kspをダウンロードして、KONTAKTのスクリプトフォルダに置きます。
+InfiniteRouter.kspをダウンロードして、KONTAKTのスクリプトフォルダに置きます。
+
+- Windowsの場合
+    - C:\Users\(ユーザ名)\Documents\Native Instruments\Kontakt\presets\Multiscripts
+- Macの場合
+    - Macintosh HD>ユーザ>(ユーザ名)>書類>Native Instruments>Kontakt>presets>Multiscripts
 
 各楽器ごとにKONTAKTを立ち上げ、それぞれのパッチを読み込みます。
 このとき、チャンネルは1〜6を使用してください。
+
+<img width="329" alt="Kontakt_1" src="https://user-images.githubusercontent.com/46624978/103148888-e874a080-47a7-11eb-88fd-253d375799cd.png">
+
 
 KSPで、さきほどのInfiniteRouter.kspを読み込みます。
 
