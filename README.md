@@ -3,6 +3,8 @@ KSP Multi Script for manual divisi of Infinite Brass/Woodwinds.<br>
 It allows you to assign each note to divisi parts you want to play in by Expression Maps.<br>
 To use this script, you can use Infinite Brass/Woodwinds as an ensemble patch without recording each part.
 
+* 日本語の説明は[こちら](https://github.com/nabemon/KSP_InfiniteRouter/blob/master/README.md#japanese)をご覧ください
+
 ## Usage
 Download InfiniteRouter.ksp and put it into KONTAKT script folder.
 - Windows
