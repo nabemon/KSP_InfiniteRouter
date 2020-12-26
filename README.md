@@ -33,6 +33,11 @@ Now you can assign each note to divisi parts you want to play in by note Attribu
 
 <img width="613" alt="Attribute" src="https://user-images.githubusercontent.com/46624978/103149561-f0374380-47ad-11eb-9b34-10018b0f5594.png">
 
+In addition, I uploaded TouchOSC controller for this script and Expression Maps as a bonus.
+You can also control mix when "Mixed Mic" is enabled.
+
+<img width="653" alt="TouchOSC" src="https://user-images.githubusercontent.com/46624978/103149051-608f9600-47a9-11eb-8ff7-0543f079e4a9.PNG">
+
 
 ## Note
 - Fast phrases or a large amount of MIDI CC can causes dropping notes or CC.
